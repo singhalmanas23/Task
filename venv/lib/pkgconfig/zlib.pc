@@ -1,0 +1,13 @@
+prefix=/Users/manassinghal/Desktop/CodingStuff/InternshipTask/venv
+exec_prefix=/Users/manassinghal/Desktop/CodingStuff/InternshipTask/venv
+libdir=/Users/manassinghal/Desktop/CodingStuff/InternshipTask/venv/lib
+sharedlibdir=/Users/manassinghal/Desktop/CodingStuff/InternshipTask/venv/lib
+includedir=/Users/manassinghal/Desktop/CodingStuff/InternshipTask/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
