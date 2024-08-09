@@ -17,14 +17,12 @@ def get_gemini_response(input_text, file_content, prompt):
 
 def input_file_setup(uploaded_file):
     if uploaded_file is not None:
-        # Check if the uploaded file is an image or a PDF
         if uploaded_file.type == "application/pdf":
             images = pdf2image.convert_from_bytes(uploaded_file.read())
             first_page = images[0]
-        else:  # Assuming it's an image (jpg, jpeg, png)
+        else: 
             first_page = Image.open(uploaded_file)
         
-        # Convert the image to RGB mode if it has an alpha channel (RGBA)
         if first_page.mode == "RGBA":
             first_page = first_page.convert("RGB")
 
@@ -42,7 +40,6 @@ def input_file_setup(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
 
-# Streamlit App
 st.set_page_config(page_title="Invoice Data Extractor")
 st.header("Invoice Data Extractor")
 uploaded_file = st.file_uploader("Upload your invoice in PDF or image form.", type=["pdf","jpg","jpeg","png"])
